@@ -29,19 +29,7 @@
     <ClCompile Include="sortedArrayInsertNumberSpec.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sortedArrayPositionsChangeSpec.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="removeArrayDuplicatesSpec.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="studentsCountSpec.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="scoresDescendingSortSpec.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="topKStudentsSpec.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
