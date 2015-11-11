@@ -28,7 +28,7 @@ void * scoresDescendingSort(struct student *students, int len) {
 	else if (len == 1){
 		return students;
 	}
-	else{
+	else{//selection sort
 		for (int i = 0; i < len; i++){
 			for (int j = i; j < len; j++){
 				if (students[i].score < students[j].score){
