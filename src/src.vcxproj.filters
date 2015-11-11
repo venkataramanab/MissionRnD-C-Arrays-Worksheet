@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="sortedArrayPositionsChange.cpp">
+    <ClCompile Include="scoresDescendingSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
