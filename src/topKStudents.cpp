@@ -22,9 +22,10 @@ struct student {
 };
 
 struct student ** topKStudents(struct student *students, int len, int K) {
-	struct student temp,**res,*temp1;
+	struct student temp,**temp1;
+	temp1 = (struct student**)malloc(sizeof(struct student));
 	int test = 0;
-	if ((K==0)||(K<0)||(K>len)){
+	if ((K<=0)||(!students[0].name)){
 		return NULL;
 	}
 	else if (K == 1){
@@ -33,11 +34,10 @@ struct student ** topKStudents(struct student *students, int len, int K) {
 				test = i;
 			}
 		}
-		temp1 = &students[test];
-		res = &temp1;
-		return res;
+		temp1[0] = &students[test];
+		return temp1;
 	}
-	else{//selection sort
+	else{
 		for (int i = 0; i < len; i++){
 			for (int j = i; j < len; j++){
 				if (students[i].score < students[j].score){
@@ -47,9 +47,12 @@ struct student ** topKStudents(struct student *students, int len, int K) {
 				}
 			}
 		}
-		for (int i = 0; i < K;i++){
-			res[i] = &students[i];
+		if (K>len){
+			K = len;
 		}
-		return res;
+		for (int i = 0; i < K;i++){
+			temp1[i] = &students[i];
+		}
+		return temp1;
 	}
 }

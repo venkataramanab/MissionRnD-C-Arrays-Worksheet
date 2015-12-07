@@ -38,5 +38,4 @@ void * removeArrayDuplicates(int *Arr, int len)
 	else{
 		return NULL;
 	}
-	
 }
