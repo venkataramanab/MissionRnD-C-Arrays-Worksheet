@@ -23,7 +23,9 @@ void * sortedArrayPositionsChange(int *Arr, int len)
 		while (Arr[last] > Arr[last - 1]){
 				last--;
 		}
-		swap(&Arr[first], &Arr[last]);
+		if (first < last){
+			swap(&Arr[first], &Arr[last]);
+		}
 		return Arr;
 	}
 	else{
