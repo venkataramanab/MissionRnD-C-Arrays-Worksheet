@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="studentsCount.cpp" />
+    <ClCompile Include="sortedArrayInsertNumber.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{EA8FC4C2-FD85-426C-BF48-5B195EA40675}</ProjectGuid>

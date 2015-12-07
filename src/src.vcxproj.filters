@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="studentsCount.cpp">
+    <ClCompile Include="sortedArrayInsertNumber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
