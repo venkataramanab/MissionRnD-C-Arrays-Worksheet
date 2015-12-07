@@ -14,69 +14,75 @@ NOTES:
 */
 
 #include <stdio.h>
-
+int validation(int*, int);
+void *count(int *moreCount, int *lessCount, int *Arr, int score, int len);
+int boundaryCond(int *Arr, int score, int len, int **lessCount, int **moreCount);
 void *studentsCount(int *Arr, int len, int score, int *lessCount, int *moreCount) {
-	//as input is asorted array we can use binary search
-	int high = len - 1, low = 0, mid;
-	*lessCount=0;
-	*moreCount=0;
+	//as input is a sorted array we can use binary search
+	//binary search results faster than accessing each element
+	*lessCount = 0;
+	*moreCount = 0;
+	if (validation(Arr, len)){
+		if (boundaryCond(Arr,score,len,&lessCount,&moreCount)){
+		}
+		else{
+			return count(moreCount, lessCount, Arr, score, len);
+		}
+	}
+}
+int validation(int *Arr, int len){
 	if (Arr == NULL){
 		return NULL;
 	}
 	else if (len <= 0){
 		return NULL;
 	}
-	else if (score<Arr[low]){
-		*moreCount = len;
-		*lessCount = 0;
-	}
-	else if (score>Arr[high]){
-		*lessCount = len;
-		*moreCount = 0;
-	}
-	else if (len == 1){
-		if (Arr[0]<score){
-			*lessCount = 1;
-			*moreCount = 0;
-		}
-		else if (Arr[0]>score){
-			*lessCount = 0;
-			*moreCount = 1;
-		}
-		else{
-			*lessCount = 0;
-			*moreCount = 0;
-		}
-	}
 	else{
-		while (high > low){
-			mid = (high + low) / 2;
-			
-			if ((Arr[mid] < score)&&(Arr[mid+1]> score)){
-					*lessCount = mid+1;
-					*moreCount = len - mid - 1;
-				break;
-			}
-			else if (Arr[mid] == score){
-				if (Arr[mid - 1] == Arr[mid]){
-					high = mid - 1;
-				}
-				else{
-					*lessCount = mid;
-					*moreCount = len - mid - 1;
-					break;
-				}
-			}
-			else if (Arr[mid] < score){
-				low = mid;
-			}
-			else if (Arr[mid]>score){
-				high = mid;
+		return 1;
+	}
+}
+void *count( int *moreCount, int *lessCount, int *Arr, int score, int len){
+	int mid;
+	int high=len-1,low=0;
+	while (high > low){
+		mid = (high + low) / 2;
+		if ((Arr[mid] < score) && (Arr[mid + 1]> score)){
+			*lessCount = mid + 1;
+			*moreCount = len - mid - 1;
+			break;
+		}
+		else if (Arr[mid] == score){
+			if (Arr[mid - 1] == Arr[mid]){
+				high = mid - 1;
 			}
 			else{
-				return NULL;
+				*lessCount = mid;
+				*moreCount = len - mid - 1;
+				break;
 			}
+		}
+		else if (Arr[mid] < score){
+			low = mid;
+		}
+		else if (Arr[mid]>score){
+			high = mid;
+		}
+		else{
+			return NULL;
 		}
 	}
 }
-
+int boundaryCond(int *Arr, int score,int len, int **lessCount, int **moreCount){
+	if (score<Arr[0]){
+		**moreCount = len;
+		**lessCount = 0;
+	}
+	else if (score>Arr[len-1]){
+		**lessCount = len;
+		**moreCount = 0;
+	}
+	else {
+		return 0;
+	}
+	return 1;
+}
