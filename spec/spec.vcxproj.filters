@@ -26,7 +26,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="scoresDescendingSortSpec.cpp">
+    <ClCompile Include="removeArrayDuplicatesSpec.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
