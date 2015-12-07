@@ -12,7 +12,7 @@ namespace spec
 
 		TEST_METHOD(inValidInputCheck)
 		{
-			int lessCount, moreCount;
+			//int lessCount, moreCount;
 			Assert::IsNull(scoresDescendingSort(NULL, 1), L"Array NULL check failed.", LINE_INFO());
 			struct student students[1] = { { "stud1", 50 } };
 			Assert::IsNull(scoresDescendingSort(students, -2), L"Length less than zero check failed.", LINE_INFO());
