@@ -12,7 +12,6 @@ ERROR CASES: Return NULL for invalid inputs.
 
 NOTES:
 */
-
 #include <stdio.h>
 int validation(int*, int);
 void *count(int *moreCount, int *lessCount, int *Arr, int score, int len);
@@ -24,10 +23,11 @@ void *studentsCount(int *Arr, int len, int score, int *lessCount, int *moreCount
 	*moreCount = 0;
 	if (validation(Arr, len)){
 		if (boundaryCond(Arr,score,len,&lessCount,&moreCount)){
-		}
-		else{
 			return count(moreCount, lessCount, Arr, score, len);
 		}
+	}
+	else{
+		return NULL;
 	}
 }
 int validation(int *Arr, int len){
@@ -82,7 +82,7 @@ int boundaryCond(int *Arr, int score,int len, int **lessCount, int **moreCount){
 		**moreCount = 0;
 	}
 	else {
-		return 0;
+		return 1;
 	}
-	return 1;
+	return 0;
 }
