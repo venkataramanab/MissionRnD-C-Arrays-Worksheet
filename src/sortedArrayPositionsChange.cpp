@@ -16,7 +16,7 @@ void swap(int *pos1, int *pos2);
 void * sortedArrayPositionsChange(int *Arr, int len)
 {
 	int first=0, last=len-1;
-	if ((Arr)&&(len>0)){
+	if ((Arr)&&(last>0)){
 		while (Arr[first]<Arr[first+1]){
 				first++;
 		}

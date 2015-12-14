@@ -26,7 +26,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="studentsCountSpec.cpp">
+    <ClCompile Include="sortedArrayPositionsChangeSpec.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
